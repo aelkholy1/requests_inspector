@@ -26,8 +26,7 @@ class RequestsInspector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var widget = enabled
-        ? ChangeNotifierProvider(
+    Widget widget =  ChangeNotifierProvider(
             create: (context) => InspectorController(
               enabled: enabled,
               showInspectorOn: _isSupportShaking()
@@ -52,8 +51,7 @@ class RequestsInspector extends StatelessWidget {
                 ),
               );
             },
-          )
-        : _child;
+          );
 
     if (!hideInspectorBanner && enabled)
       widget = Directionality(

@@ -72,7 +72,6 @@ class InspectorController extends ChangeNotifier {
   void hideInspector() => pageController.jumpToPage(0);
 
   void addNewRequest(RequestDetails request) {
-    if (!_enabled) return;
     _requestsList.insert(0, request);
     notifyListeners();
   }
