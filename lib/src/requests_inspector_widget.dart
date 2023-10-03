@@ -40,13 +40,16 @@ class RequestsInspector extends StatelessWidget {
                     inspectorController.pageController.page == 0,
                 child: GestureDetector(
                   onLongPress: inspectorController.showInspector,
-                  child: PageView(
-                    controller: inspectorController.pageController,
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: [
-                      _child,
-                      const _Inspector(),
-                    ],
+                  child: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: PageView(
+                      controller: inspectorController.pageController,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        _child,
+                        const _Inspector(),
+                      ],
+                    ),
                   ),
                 ),
               );
