@@ -39,7 +39,7 @@ class RequestsInspector extends StatelessWidget {
                 onWillPop: () async =>
                     inspectorController.pageController.page == 0,
                 child: GestureDetector(
-                  onLongPress: inspectorController.showInspector,
+                  onLongPress: enabled ? inspectorController.showInspector : null,
                   child: Directionality(
                     textDirection: TextDirection.ltr,
                     child: PageView(
